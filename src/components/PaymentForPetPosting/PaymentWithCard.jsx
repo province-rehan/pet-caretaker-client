@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import PaymentForPetPostingWithBkash from "./PaymentForPetPostingWithBkash";
 
-const PaymentWithCard = () => {
+const PaymentWithCard = ({ handleSubmit }) => {
   const nevugate = useNavigate();
   const { user } = useContext(AuthContext);
 
@@ -15,9 +15,10 @@ const PaymentWithCard = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  const handlePayment = () => {
+  const handlePayment = (event) => {
     toast.success("Payment for post was successfully");
     nevugate("/adaption");
+    handleSubmit(event);
   };
 
   return (
@@ -56,7 +57,7 @@ const PaymentWithCard = () => {
               <Button size="lg" fullWidth onClick={handlePayment}>
                 Pay with stripe
               </Button>
-              <PaymentForPetPostingWithBkash user={user} />
+              <PaymentForPetPostingWithBkash user={user} handleSubmit={handleSubmit} />
             </div>
             <Toaster />
           </form>

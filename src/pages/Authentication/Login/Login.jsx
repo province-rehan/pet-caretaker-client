@@ -17,6 +17,7 @@ const Login = () => {
   const [token] = UseAccessToken(loginUserEmail);
 
   if (token) {
+    window.location.reload(false);
     navigate("/");
   }
 

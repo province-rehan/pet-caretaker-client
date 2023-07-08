@@ -10,25 +10,25 @@ const PostPet = () => {
   console.log(user);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const ownerName = form.ownerName?.value;
-    const ownerEmail = form.ownerEmail?.value;
-    const ownerPhone = form.ownerPhone?.value;
+    event?.preventDefault();
+    const form = event?.target;
+    const ownerName = form?.ownerName?.value;
+    const ownerEmail = form?.ownerEmail?.value;
+    const ownerPhone = form?.ownerPhone?.value;
 
-    const petName = form.petName?.value;
-    const petCategory = form.petCategory?.value;
-    const petGender = form.petGender?.value;
-    const petColor = form.petColor?.value;
-    const petFeedingTime = form.petFeedingTime?.value;
+    const petName = form?.petName?.value;
+    const petCategory = form?.petCategory?.value;
+    const petGender = form?.petGender?.value;
+    const petColor = form?.petColor?.value;
+    const petFeedingTime = form?.petFeedingTime?.value;
 
-    const adaptionStartDate = form.adaptionStartDate?.value;
-    const adaptionEndDate = form.adaptionEndDate?.value;
-    const totalDaysOfAdaption = form.totalDaysOfAdaption?.value;
-    const adaptionCost = form.adaptionCost?.value;
+    const adaptionStartDate = form?.adaptionStartDate?.value;
+    const adaptionEndDate = form?.adaptionEndDate?.value;
+    const totalDaysOfAdaption = form?.totalDaysOfAdaption?.value;
+    const adaptionCost = form?.adaptionCost?.value;
 
     // upload image to imgbb
-    const petPhoto = event.target.petPhoto.files[0];
+    const petPhoto = event?.target?.petPhoto?.files[0];
     // console.log(petPhoto);
     const formData = new FormData();
     formData.append("image", petPhoto);
@@ -143,7 +143,7 @@ const PostPet = () => {
             <Input name="adaptionCost" label="Adaption cost (BDT)" type="number" min={1} required />
           </div>
         </div>
-        <PaymentWithCard />
+        <PaymentWithCard handleSubmit={handleSubmit} />
       </form>
     </div>
   );

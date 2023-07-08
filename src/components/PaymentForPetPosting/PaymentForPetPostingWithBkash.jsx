@@ -4,7 +4,7 @@ import { Button, Dialog, DialogBody, Input } from "@material-tailwind/react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const PaymentForPetPostingWithBkash = ({ user }) => {
+const PaymentForPetPostingWithBkash = ({ user, handleSubmit }) => {
   const nevugate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -12,9 +12,10 @@ const PaymentForPetPostingWithBkash = ({ user }) => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  const handlePayment = () => {
+  const handlePayment = (event) => {
     toast.success("Payment for post was successfully");
     nevugate("/adaption");
+    handleSubmit(event);
   };
   // otp
   const randomOtp = () => {

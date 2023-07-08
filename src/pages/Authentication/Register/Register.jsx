@@ -16,6 +16,7 @@ const Register = () => {
   const [token] = UseAccessToken(createdUserEmail);
   if (token) {
     nevigate("/");
+    window.location.reload(false);
   }
 
   const handleRegister = (event) => {
