@@ -28,10 +28,17 @@ const DashboardLayout = () => {
             {!isAdmin && (
               <>
                 <li className="mt-2">
-                  <Link className="" to="/dashboard/orderpetfood">
-                    Ordered Pet Food
+                  <Link className="" to="/dashboard/cart">
+                    Pet Food Cart
                   </Link>
                 </li>
+                {/* // shopping bag route */}
+                <li className="mt-2">
+                  <Link className="" to="/dashboard/orderpetfood">
+                    Shopping Bag
+                  </Link>
+                </li>
+                {/* // shopping bag route */}
                 <li className="mt-2">
                   <Link className="" to="/dashboard/addreview">
                     Add Review

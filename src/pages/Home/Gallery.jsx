@@ -12,9 +12,10 @@ const Gallery = () => {
       <div class="container px-5 py-24 mx-auto flex flex-wrap">
         <div class="flex w-full mb-20 flex-wrap">
           <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">Here is our gallery</h1>
-          <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
-            Discover the cutest pets in our gallery! Explore adorable kittens, playful puppies, majestic horses, graceful birds, and fascinating reptiles. Fall in love with their unique beauty and the
-            joy they bring to our lives. Join us in celebrating the incredible bond between humans and pets.
+          <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base text-justify">
+            Welcome to our adorable pet gallery! Here, you can explore a collection of cute and lovable pets who have found temporary homes through our website. Each charming pet has been lovingly
+            cared for by qualified pet keepers while their owners were away. Scroll through the gallery and let these furry companions warm your heart. Witness the joy and happiness that our platform
+            brings to both pets and their temporary caregivers
           </p>
         </div>
         <div class="flex flex-wrap md:-m-2 -m-1">

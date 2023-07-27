@@ -1,4 +1,7 @@
 import React from "react";
+import PetDoctorFaq from "./PetDoctorFaq";
+import { toast } from "react-hot-toast";
+import { Button } from "@material-tailwind/react";
 
 const doctors = [
   {
@@ -64,10 +67,21 @@ const doctors = [
 ];
 const PetDoctor = () => {
   const handleReserve = () => {
-    alert("Please call 01915777831 for Bookings.");
+    toast((t) => (
+      <span className="flex gap-5">
+        <p>
+          Please call <b>01915777831</b> for Bookings.
+        </p>
+        <Button size="xs" color="green" className="" onClick={() => toast.dismiss(t.id)}>
+          Close
+        </Button>
+      </span>
+    ));
   };
   const handleVideoCall = () => {
-    alert("This Feature will be available soon.");
+    toast("This Feature will be available soon.", {
+      icon: "🔜",
+    });
   };
   return (
     <div className="flex flex-col justify-center items-center">
@@ -81,15 +95,21 @@ const PetDoctor = () => {
                 <h2 className="text-2xl font-semibold tracki">{doctor.doctorName}</h2>
                 <p className="text-gray-800">Hospital Name: {doctor.hospitalName}</p>
               </div>
-              <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md bg-blue-600 text-gray-50" onClick={handleReserve}>
-                Take an Appointment
-              </button>
-              <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md bg-blue-600 text-gray-50" onClick={handleVideoCall}>
-                Video Conference
-              </button>
+              <div>
+                <button type="button" className="flex items-center justify-center w-full p-2 mb-2 font-semibold tracki rounded-md bg-blue-600 text-gray-50" onClick={handleReserve}>
+                  Take an Appointment
+                </button>
+                <button type="button" className="flex items-center justify-center w-full p-2 font-semibold tracki rounded-md bg-blue-600 text-gray-50" onClick={handleVideoCall}>
+                  Video Conference
+                </button>
+              </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col justify-center items-center my-5 px-20">
+        <p className="text-4xl font-medium">FAQ</p>
+        <PetDoctorFaq />
       </div>
     </div>
   );

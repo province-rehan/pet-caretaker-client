@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { Card, CardHeader, CardBody, CardFooter, Button } from "@material-tailwind/react";
+import { Card, CardHeader, CardBody, CardFooter } from "@material-tailwind/react";
+import rating from "../../assets/icons/star.png";
 
 const FoodAccessories = () => {
   const foodAndAccessories = useLoaderData();
@@ -21,15 +22,19 @@ const FoodAccessories = () => {
                 </p>
               </div>
               <p className="text-gray-700 text-justify">{foodAndAccessory.description.slice(0, 50)}...</p>
-              <div className="flex justify-between">
-                <p className="text-lg font-medium">Price: {foodAndAccessory.price}(BDT)</p>
+              <div className="flex justify-between mt-3">
+                <p className="font-medium">Price: {foodAndAccessory.price}(BDT)</p>
+                <p className="font-medium flex justify-center items-center">
+                  <img src={rating} className="w-5 mr-1" alt="" />
+                  <p>{foodAndAccessory.rating}</p>
+                </p>
               </div>
             </CardBody>
             <Link to={`food-accessories/${foodAndAccessory.id}`}>
               <CardFooter className="">
-                <Button size="lg" fullWidth={true}>
+                <button className="inline-flex items-center justify-center w-full h-9 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
                   Buy
-                </Button>
+                </button>
               </CardFooter>
             </Link>
           </Card>

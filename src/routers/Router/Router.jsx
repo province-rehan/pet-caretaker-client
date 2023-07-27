@@ -24,6 +24,7 @@ import TakePet from "../../layouts/DashboardLayout/TakePet";
 import FoodAccessoriesDetails from "../../pages/FoodAccessories/FoodAccessoriesDetails";
 import AllPayment from "../../layouts/DashboardLayout/AllPayment";
 import PetDoctor from "../../pages/PetDoctor/PetDoctor";
+import Cart from "../../layouts/DashboardLayout/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -119,6 +120,11 @@ export const router = createBrowserRouter([
         element: <AddReview />,
       },
       {
+        path: "/dashboard/cart",
+        element: <Cart />,
+      },
+      {
+        // shopping bag route
         path: "/dashboard/orderpetfood",
         element: <GetOrderedFood />,
       },

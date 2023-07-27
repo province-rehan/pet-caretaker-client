@@ -4,9 +4,8 @@ import { Fragment, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const PaymentWithBkash = ({ cartItem, user }) => {
+const PaymentWithBkash = ({ total, user, cart }) => {
   const { displayName, email } = user;
-  const { name, price, quantity, _id } = cartItem;
   const nevugate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -17,22 +16,16 @@ const PaymentWithBkash = ({ cartItem, user }) => {
     const form = event.target;
     const holderName = form?.holderName?.value;
     const userEmail = form?.userEmail?.value;
-    const productName = form?.productName?.value;
-    const productPrice = form?.productPrice?.value;
-    const productQuantity = form?.productQuantity?.value;
     const productTotalPrice = form?.productTotalPrice?.value;
     const cardNumber = form?.cardNumber?.value;
 
     const paymentData = {
       holderName,
       userEmail,
-      productName,
-      productPrice,
-      productQuantity,
       productTotalPrice,
+      cart,
       cardNumber,
       cvc: "Bkash payment",
-      productId: _id,
     };
 
     fetch("https://petcaretaker-server.vercel.app/payment", {
@@ -84,21 +77,7 @@ const PaymentWithBkash = ({ cartItem, user }) => {
             <div>
               <p className="font-semibold text-center">Product Details</p>
               <p className="text-sm text-black">Price</p>
-              <Input label="Product Name" name="productName" defaultValue={name} disabled />
-              <div className="flex items-center gap-4">
-                <div>
-                  <p className="text-sm my-2 text-black">Price</p>
-                  <Input label="Price" name="productPrice" defaultValue={price} disabled containerProps={{ className: "min-w-[72px]" }} />
-                </div>
-                <div>
-                  <p className="text-sm my-2 text-black">Quantity</p>
-                  <Input label="Price" name="productQuantity" defaultValue={quantity} disabled containerProps={{ className: "min-w-[72px]" }} />
-                </div>
-                <div>
-                  <p className="text-sm my-2 text-black">Total Price</p>
-                  <Input label="Price" name="productTotalPrice" defaultValue={price * quantity} disabled containerProps={{ className: "min-w-[72px]" }} />
-                </div>
-              </div>
+              <Input label="Product Name" name="productTotalPrice" defaultValue={total} disabled />
             </div>
             <div>
               <p className="font-semibold text-center">Phone Details</p>
