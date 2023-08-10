@@ -51,6 +51,7 @@ const FoodAccessoriesDetails = () => {
               </button>
             </span>
           ));
+          nevigate("/food-accessories")
         }
       })
       .catch((error) => toast.error(error.message));

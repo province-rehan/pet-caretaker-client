@@ -139,7 +139,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/allorders",
         loader: async () => {
-          return fetch("https://petcaretaker-server.vercel.app/allcart");
+          return fetch("https://petcaretaker-server.vercel.app/payment");
         },
         element: (
           <AdminRoute>

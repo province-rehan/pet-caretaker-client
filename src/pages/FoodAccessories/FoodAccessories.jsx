@@ -8,7 +8,7 @@ const FoodAccessories = () => {
   return (
     <div>
       <p className="text-3xl font-medium text-center my-5">Food And Accessories</p>
-      <section className="container mx-auto px-4 grid gap-2 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4">
+      <section className="container mx-auto px-4 grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
         {foodAndAccessories.map((foodAndAccessory) => (
           <Card className="w-full max-w-[26rem] shadow-lg" key={foodAndAccessory.id}>
             <CardHeader floated={false} color="blue-gray">

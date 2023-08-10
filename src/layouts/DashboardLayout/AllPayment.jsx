@@ -9,30 +9,34 @@ const AllPayment = () => {
       <table className="table table-zebra">
         {/* head */}
         <thead>
-          <tr>
+          <tr className="text-center">
             <th>User Name</th>
-            <th>User Email</th>
             <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Product Quantity</th>
             <th>Total Price</th>
             <th>#Invoice Number</th>
             <th>Card Number</th>
             <th>CVC</th>
+            <th>Payment Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           {payments.map((payment) => (
             <tr key={payment._id}>
               <td>{payment.holderName}</td>
-              <td>{payment.userEmail}</td>
-              <td>{payment.productName}</td>
-              <td>{payment.productPrice}</td>
-              <td>{payment.productQuantity}</td>
+              <td>
+                {payment?.cart.map((productName, i) => {
+                  return (
+                    <ul key={i}>
+                      <li>{productName?.name}</li>
+                    </ul>
+                  );
+                })}
+              </td>
               <td>{payment.productTotalPrice}</td>
               <td>{payment._id}</td>
               <td>{payment.cardNumber}</td>
               <td>{payment.cvc}</td>
+              <td className="text-green-500 font-bold">PAID</td>
             </tr>
           ))}
         </tbody>

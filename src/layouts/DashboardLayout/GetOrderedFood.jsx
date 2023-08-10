@@ -7,7 +7,7 @@ const GetOrderedFood = () => {
   const { user, loading } = useContext(AuthContext);
   const [shoppingBag, setShoppingBag] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/payments?email=${user?.email}`)
+    fetch(`https://pet-caretaker-server.vercel.app/payments?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setShoppingBag(data));
   }, [user.email]);
@@ -38,13 +38,15 @@ const GetOrderedFood = () => {
             <tr key={shoppingBags._id}>
               <th>{index + 1}</th>
               <td>{shoppingBags.holderName}</td>
-              <td>{shoppingBags?.cart.map((productName, i) =>{
-                return(
-                  <ul key={i}>
-                    <li>{productName?.name}</li>
-                  </ul>
-                )
-              })}</td>
+              <td>
+                {shoppingBags?.cart.map((productName, i) => {
+                  return (
+                    <ul key={i}>
+                      <li>{productName?.name}</li>
+                    </ul>
+                  );
+                })}
+              </td>
               <td>{shoppingBags._id}</td>
               <td>{shoppingBags.cardNumber}</td>
               <td>{shoppingBags.cvc}</td>

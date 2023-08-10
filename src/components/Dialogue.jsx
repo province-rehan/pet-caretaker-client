@@ -47,13 +47,13 @@ const Dialogue = ({ total, user, cart }) => {
       .then((data) => {
         if (data.acknowledged) {
           // delete
-          fetch(`http://localhost:5000/carts?email=${email}`, {
+          fetch(`https://pet-caretaker-server.vercel.app/carts?email=${email}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
             .then((data) => {
               toast.success("Payment success!");
-              window.location.reload(true);
+              // window.location.reload(true);
               navigate("/dashboard/orderpetfood");
             })
             .catch((error) => toast.error(error.message));
@@ -64,13 +64,13 @@ const Dialogue = ({ total, user, cart }) => {
 
   return (
     <Fragment>
-      <Button size="sm" onClick={handleOpen} variant="gradient">
-        Pay
+      <Button size="" onClick={handleOpen} variant="gradient" className="w-1/4">
+        Pay Now
       </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogBody>
           <Typography>
-            <form className="flex flex-col" onSubmit={handlePayment}>
+            <form className="flex flex-col mb-2" onSubmit={handlePayment}>
               <p className="font-semibold text-center">User Details</p>
               <div>
                 <p className="text-sm my-2 text-black">Name</p>
@@ -95,10 +95,10 @@ const Dialogue = ({ total, user, cart }) => {
                 <Button size="lg" type="submit" fullWidth>
                   Pay with stripe
                 </Button>
-                <PaymentWithBkash total={total} user={user} cart={cart} />
               </div>
               <Toaster />
             </form>
+            <PaymentWithBkash total={total} user={user} cart={cart} />
           </Typography>
         </DialogBody>
       </Dialog>

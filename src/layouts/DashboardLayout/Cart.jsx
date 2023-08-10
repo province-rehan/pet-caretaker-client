@@ -24,7 +24,7 @@ const Cart = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          window.location.reload(true);
+          // window.location.reload(true);
           toast.success("Delete cart was successful");
         }
       })
