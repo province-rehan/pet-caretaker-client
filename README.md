@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## Project Title: [Pet Caretaker]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Live site link:** https://rehan-petcaretaker.web.app/
 
-## Available Scripts
+### Purpose
 
-In the project directory, you can run:
+Welcome to our pet adoption and supply platform, a haven for pet enthusiasts and compassionate individuals alike. Our website serves as a bridge connecting those seeking to adopt pets with pet owners looking to find a loving home for their beloved companions.
 
-### `npm start`
+Our primary objective is to facilitate the responsible and ethical rehoming of pets. Pet owners can post adoption requests, providing comprehensive information about their pets, ensuring potential adopters make informed decisions. Prospective pet receivers, after careful consideration, can initiate the adoption process, promising a secure and caring environment for the animals.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Beyond adoption, our platform offers a comprehensive shopping experience, featuring a wide range of high-quality pet food and accessories. Catering to the diverse needs of pets, our selection ensures optimal care and well-being.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To maintain the integrity of our community, we've established four distinct roles: administrators to oversee operations, pet receivers seeking to adopt, pet owners entrusting their pets, and normal users engaging with our resources.
 
-### `npm test`
+We are committed to fostering a safe, respectful, and empathetic environment for all users. By uniting pet owners, potential adopters, and pet enthusiasts, we aim to promote responsible pet ownership, animal welfare, and the enduring bonds between humans and their furry companions. Join us in this noble journey of care, compassion, and companionship.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Single page application.
+- Develop UI using React.js and TailwindCss and implement responsiveness.
+- Implement JWT to secure API.
+- It has Admin, Pet owner, Pet adopters, Normal users who can only buy products roles.
+- Firebase Authentication
+- Implemented Email and Google-based Sign in, Sign up and Sign out.
+- Support CRUD operation.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Use Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- Node.js
+- Javascript
+- MongoDB
+- Express.js
+- Taildwind Css
+- React Router DOM
+- Coustom Hook
+- Material Tailwind
+- JSON Web Token
+- React Hot Toast
+- Firebase Authentication
+- Vercel
+- Github
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Admin Role
 
-### `npm run eject`
+Admin Email
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  province@gmail.com
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Admin Password
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  123456789
+```
